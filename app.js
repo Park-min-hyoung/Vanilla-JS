@@ -1,0 +1,25 @@
+const calculator = {
+    plus: function(a, b) {
+        return a + b;
+    },
+    minus: function(a, b) {
+        return a - b;
+    },
+    times: function(a, b) {
+        return a * b;
+    },
+    divide: function(a, b) {
+        return a / b;
+    },
+    power: function(a, b) {
+        return a ** b;
+    },
+};
+
+const plusResult = calculator.plus(2, 3); //5
+const minusResult = calculator.minus(plusResult, 10); //-5
+const timeResult = calculator.times(10, minusResult); //
+const divideresult = calculator.divide(timeResult, plusResult);
+const powerResult = calculator.power(divideresult, minusResult);
+
+console.log(plusResult);
