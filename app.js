@@ -1,25 +1,39 @@
-const calculator = {
-    plus: function(a, b) {
-        return a + b;
-    },
-    minus: function(a, b) {
-        return a - b;
-    },
-    times: function(a, b) {
-        return a * b;
-    },
-    divide: function(a, b) {
-        return a / b;
-    },
-    power: function(a, b) {
-        return a ** b;
-    },
-};
+const h1 = document.querySelector("div.hello:first-child h1");
 
-const plusResult = calculator.plus(2, 3); //5
-const minusResult = calculator.minus(plusResult, 10); //-5
-const timeResult = calculator.times(10, minusResult); //
-const divideresult = calculator.divide(timeResult, plusResult);
-const powerResult = calculator.power(divideresult, minusResult);
+function handleTitleClick() {
+    h1.style.color = "blue";
+}
 
-console.log(plusResult);
+function handleMouseEnter() {
+    h1.innerText = "Mouse is here!";
+}
+
+function handleMouseLeave() {
+    h1.innerText = "Mouse is gone!";
+}
+
+function handleWindoResize() {
+    document.body.style.backgroundColor = "tomato";
+}
+
+function handleWindowCopy() {
+    alert("copier!");
+}
+
+function handleWindowOffline() {
+    alert("SOS no WIFI");;
+}
+
+function handleWindowOnline() {
+    alert("ALL GOOD");;
+}
+
+h1.addEventListener("click", handleTitleClick);
+h1.addEventListener("mouseenter", handleMouseEnter);
+h1.addEventListener("mouseleave", handleMouseLeave);
+
+
+window.addEventListener("resize", handleWindoResize);
+window.addEventListener("copy", handleWindowCopy);
+window.addEventListener("offline", handleWindowOffline);
+window.addEventListener("online", handleWindowOnline);
