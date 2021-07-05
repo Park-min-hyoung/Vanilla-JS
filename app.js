@@ -1,7 +1,9 @@
-const h1 = document.querySelector("div.hello:first-child h1");
+const ioginInput = document.querySelector("#login-form input");
+const ioginButton = document.querySelector("#login-form button");
 
-function handleTitleClick() {
-    h1.classList.toggle("clicked");
+function onLoginBtnClick() {
+    const username = ioginInput.value;
+    console.log(username);
 }
 
-h1.addEventListener("click", handleTitleClick);
+ioginButton.addEventListener("click", onLoginBtnClick);
