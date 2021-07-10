@@ -12,13 +12,15 @@ function saveToDos() {
 
 function deleteToDo(event) {
     const li = event.target.parentElement;
+    console.log(li.id);
     li.remove();
 }
 
 function paintToDo(newTodo) {
     const li = document.createElement("li");
+    li.id = newTodo.id; // html에 id 추가
     const span = document.createElement("span"); 
-    span.innerText = newTodo;
+    span.innerText = newTodo.text;
     const button = document.createElement("button");
     button.innerText = "X";
     button.addEventListener("click", deleteToDo);
@@ -31,8 +33,12 @@ function handleToDoSubmit(event) {
     event.preventDefault();
     const newTodo = todoInput.value;
     todoInput.value = "";
-    toDos.push(newTodo);
-    paintToDo(newTodo);
+    const neTodoObj = {
+        text:newTodo,
+        id: Date.now(),
+    };
+    toDos.push(neTodoObj);
+    paintToDo(neTodoObj);
     saveToDos();
 }
 
